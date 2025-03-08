@@ -9,7 +9,7 @@ export const COLORS = {
     text: '#333333',
     lightText: '#FFFFFF',
     buttonBackground: '#FFFFFF',
-    operatorButton: '#FF9500',
+    operatorButton: '#FFB200',
     functionButton: '#C5C5C5',
     numberButton: '#333333',
     shadow: 'rgba(0, 0, 0, 0.1)',

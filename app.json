@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Calculator",
-    "slug": "Calculator",
+    "slug": "CalculatorMobileApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/calc.png",
