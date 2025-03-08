@@ -5,11 +5,10 @@ import CalculatorDisplay from "./CalculatorDisplay";
 import { OperationType, formatDisplayValue, calculateResult } from "../utils/calculatorUtils";
 import CalculatorKeypad from "./CalculatorKeypad";
 import CalculatorHistory, { HistoryItem } from "./CalculatorHistory";
-import HistoryButton from "./HistoryButton";
-import ThemeToggle from "./ThemeToggle";
 import { saveHistory, loadHistory, clearHistory } from "../utils/historyUtils";
 import { useTheme } from "../context/ThemeContext";
 import AnimatedThemeView from "./AnimatedThemeView";
+import SettingsDropdown from "./SettingsDropdown";
 
 // helper function to generate unique ids
 const generateId = () => {
@@ -179,9 +178,8 @@ const Calculator: React.FC = () => {
       <AnimatedThemeView style={styles.container}>
         <SafeAreaView style={{ flex: 1 }}>
           <View style={styles.calculatorContainer}>
-            <ThemeToggle />
-            <HistoryButton 
-              onPress={toggleHistory} 
+            <SettingsDropdown 
+              onHistoryPress={toggleHistory} 
               historyVisible={historyVisible} 
             />
             <CalculatorDisplay 

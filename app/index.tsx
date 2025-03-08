@@ -12,15 +12,15 @@ export default function Home() {
       <StatusBar 
         barStyle={theme === 'dark' ? "light-content" : "dark-content"} 
         backgroundColor={colors.background}
-        animated={true} // animate status bar changes
+        animated={true}
       />
-      <Calculator /> // render the calculator component
+      <Calculator />
     </AnimatedThemeView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // make the container take up the entire screen
+    flex: 1,
   }
 });

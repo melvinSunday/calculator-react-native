@@ -3,10 +3,10 @@ import { COLORS } from '../constants/theme';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Animated } from 'react-native';
 
-// Define theme types
+// define theme types
 export type ThemeType = 'light' | 'dark';
 
-// Define theme colors interface
+// define theme colors interface
 export interface ThemeColors {
   primary: string;
   secondary: string;
@@ -24,7 +24,7 @@ export interface ThemeColors {
   lightText: string;
 }
 
-// Define light and dark theme colors
+// define light and dark theme colors
 export const themes: Record<ThemeType, ThemeColors> = {
   light: {
     ...COLORS,
@@ -47,7 +47,7 @@ export const themes: Record<ThemeType, ThemeColors> = {
   },
 };
 
-// Theme context interface
+// theme context interface
 interface ThemeContextType {
   theme: ThemeType;
   colors: ThemeColors;
@@ -55,21 +55,21 @@ interface ThemeContextType {
   transitionValue: Animated.Value;
 }
 
-// Create the context
+// create the context
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-// Theme storage key
+// theme storage key
 const THEME_STORAGE_KEY = 'calculator_theme';
 
-// Theme provider component
+// theme provider component
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<ThemeType>('light');
   const [colors, setColors] = useState<ThemeColors>(themes.light);
   
-  // Create an animated value for smooth transitions
+  // create an animated value for smooth transitions
   const transitionValue = React.useRef(new Animated.Value(theme === 'dark' ? 1 : 0)).current;
 
-  // Load saved theme on mount
+  // load saved theme on mount
   useEffect(() => {
     const loadTheme = async () => {
       try {
@@ -77,7 +77,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
           setTheme(savedTheme);
           setColors(themes[savedTheme]);
-          // Set initial transition value based on theme
+          // set initial transition value based on theme
           transitionValue.setValue(savedTheme === 'dark' ? 1 : 0);
         }
       } catch (error) {
@@ -88,22 +88,22 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     loadTheme();
   }, []);
 
-  // Toggle between light and dark themes with animation
+  // toggle between light and dark themes with animation
   const toggleTheme = async () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     
-    // Update theme state immediately to avoid UI inconsistencies
+    // update theme state immediately to avoid UI inconsistencies
     setTheme(newTheme);
     setColors(themes[newTheme]);
     
-    // Animate the transition
+    // animate the transition
     Animated.timing(transitionValue, {
       toValue: newTheme === 'dark' ? 1 : 0,
-      duration: 300, // Adjust duration as needed
-      useNativeDriver: false, // We need to animate non-transform/opacity properties
+      duration: 300, // adjust duration as needed
+      useNativeDriver: false, // we need to animate non-transform/opacity properties
     }).start();
     
-    // Save theme preference
+    // save theme preference
     try {
       await AsyncStorage.setItem(THEME_STORAGE_KEY, newTheme);
     } catch (error) {
@@ -118,11 +118,11 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   );
 };
 
-// Custom hook to use the theme context
+// custom hook to use the theme context
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
-}; 
+};

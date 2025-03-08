@@ -195,7 +195,7 @@ const CalculatorButton: React.FC<CalculatorButtonProps> = React.memo(({
   );
 });
 
-// optimize static styles
+
 const styles = StyleSheet.create({
   button: {
     justifyContent: 'center',

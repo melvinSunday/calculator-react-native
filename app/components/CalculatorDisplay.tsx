@@ -63,51 +63,48 @@ const CalculatorDisplay: React.FC<CalculatorDisplayProp> = ({
   });
   
   return (
-    <Animated.View style={[styles.container, { backgroundColor }]}>
+    <Animated.View
+      style={[
+        styles.container,
+        {
+          backgroundColor: colors.background,
+        },
+      ]}
+    >
       <View style={styles.contentContainer}>
-        <Animated.Text
-          style={[
-            styles.expressionText, 
-            { color: secondaryColor },
-            isShowingResult ? styles.resultExpression : {}
-          ]}
+        {displayExpression !== value && (
+          <Text
+            style={[
+              isShowingResult ? styles.resultExpression : styles.expressionText,
+              { color: colors.text },
+            ]}
+            numberOfLines={1}
+            adjustsFontSizeToFit
+          >
+            {displayExpression}
+          </Text>
+        )}
+        <Text
+          style={[styles.valueText, { color: colors.text }]}
           numberOfLines={1}
           adjustsFontSizeToFit
         >
-          {displayExpression}
-        </Animated.Text>
-        
-        <Animated.Text 
-          style={[
-            styles.valueText, 
-            { 
-              color: textColor,
-              ...(isShowingResult && {
-                fontWeight: '800',
-                fontSize: SIZES.xxLarge * 2.2,
-              })
-            },
-            operation ? styles.secondNumberText : {}
-          ]} 
-          numberOfLines={1} 
-          adjustsFontSizeToFit
-          minimumFontScale={0.5}
-        >
           {value}
-        </Animated.Text>
+        </Text>
       </View>
     </Animated.View>
   );
 };
 
-// define the stylesheet for the calculator display
+
 const styles = StyleSheet.create({
   container: {
-    height: 150,
+    height: Platform.OS === 'android' ? 130 : 150,
     paddingHorizontal: Platform.OS === 'android' ? SIZES.medium : SIZES.large,
+    paddingTop: Platform.OS === 'android' ? SIZES.large : SIZES.large * 1.5,
     justifyContent: "flex-end",
     alignItems: "flex-end",
-    marginBottom: SIZES.medium,
+    marginBottom: Platform.OS === 'android' ? SIZES.small : SIZES.medium,
     borderRadius: SIZES.small,
   },
   contentContainer: {
@@ -116,26 +113,26 @@ const styles = StyleSheet.create({
   },
   valueText: {
     ...FONTS.bold,
-    fontSize: SIZES.xxLarge * 2,
+    fontSize: Platform.OS === 'android' ? SIZES.xxLarge * 1.5 : SIZES.xxLarge * 2,
     textAlign: "right",
-    marginTop: SIZES.medium,
+    marginTop: SIZES.small,
     paddingHorizontal: Platform.OS === 'android' ? SIZES.xSmall : 0,
   },
   expressionText: {
     ...FONTS.regular,
-    fontSize: SIZES.large,
+    fontSize: Platform.OS === 'android' ? SIZES.medium : SIZES.large,
     textAlign: "right",
     paddingHorizontal: Platform.OS === 'android' ? SIZES.xSmall : 0,
     opacity: 0.7,
   },
   resultExpression: {
     ...FONTS.regular,
-    fontSize: SIZES.medium,
+    fontSize: Platform.OS === 'android' ? SIZES.small : SIZES.medium,
     opacity: 0.6,
   },
   secondNumberText: {
     ...FONTS.bold,
-    fontSize: SIZES.xxLarge * 2,
+    fontSize: Platform.OS === 'android' ? SIZES.xxLarge * 1.5 : SIZES.xxLarge * 2,
   },
 });
 

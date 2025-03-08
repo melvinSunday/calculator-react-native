@@ -1,50 +1,84 @@
-# Welcome to your Expo app 👋
+# Calculator Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A beautiful, feature-rich calculator application built with React Native and Expo. This app offers a modern, intuitive interface with both light and dark themes, calculation history, and smooth animations.
 
-## Get started
+![Calculator App](assets/images/calc.png)
 
-1. Install dependencies
+## Features
 
+- **Modern UI Design**: Clean, intuitive interface with beautiful transitions
+- **Theme Support**: Toggle between light and dark themes with smooth animations
+- **Calculation History**: View and manage your calculation history
+- **Haptic Feedback**: Enhanced user experience with tactile feedback
+- **Responsive Layout**: Works seamlessly across different device sizes
+- **Gesture Support**: Swipe to access additional features
+- **Persistent Storage**: Your calculation history is saved between sessions
+
+## Technology Stack
+
+- [React Native](https://reactnative.dev/) - Cross-platform mobile framework
+- [Expo](https://expo.dev/) - React Native development platform
+- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
+- [React Navigation](https://reactnavigation.org/) - Navigation library
+- [Reanimated](https://docs.swmansion.com/react-native-reanimated/) - Animations
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/) - Local data persistence
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v14 or newer)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/CalculatorMobileApp.git
+   cd CalculatorMobileApp
+   ```
+
+2. Install dependencies
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. Start the development server
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Usage
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Basic Calculations**: Add, subtract, multiply, and divide numbers
+- **Theme Switching**: Toggle between light and dark themes using the theme button
+- **History View**: Swipe down or tap the history button to view past calculations
+- **Clear History**: Remove all history items with a single tap
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+CalculatorMobileApp/
+├── app/                   # Main application code
+│   ├── components/        # UI components
+│   ├── constants/         # Theme and other constants
+│   ├── context/           # React context (theme, etc.)
+│   ├── utils/             # Helper functions
+│   ├── _layout.tsx        # App layout
+│   └── index.tsx          # Main app entry point
+├── assets/                # Images, fonts and other static files
+├── node_modules/          # Dependencies
+└── package.json           # Project metadata and dependencies
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Contributing
 
-## Learn more
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-To learn more about developing your project with Expo, look at the following resources:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
