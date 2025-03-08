@@ -3,7 +3,7 @@
 A beautiful, feature-rich calculator application built with React Native and Expo. This app offers a modern, intuitive interface with both light and dark themes, calculation history, and smooth animations.
 
 <div align="center">
-  <img src="assets/images/calc.png" alt="Calculator App">
+  <img src="assets/images/icon2.png" alt="Calculator App">
 </div>
 
 ## Features
