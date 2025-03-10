@@ -45,3 +45,19 @@ Get the Android APK: [Download Here](https://expo.dev/accounts/m.sundae/projects
 - **Clear History**: Remove all history items with a single tap
 
 ## Project Structure
+
+
+ ```
+ CalculatorMobileApp/
+ ├── app/                   # Main application code
+ │   ├── components/        # UI components
+ │   ├── constants/         # Theme and other constants
+ │   ├── context/           # React context (theme, etc.)
+ │   ├── utils/             # Helper functions
+ │   ├── _layout.tsx        # App layout
+ │   └── index.tsx          # Main app entry point
+ ├── assets/                # Images, fonts and other static files
+ ├── node_modules/          # Dependencies
+ └── package.json           # Project metadata and dependencies
+ ```
+ 
