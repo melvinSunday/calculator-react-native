@@ -46,7 +46,6 @@ Get the Android APK: [Download Here](https://expo.dev/accounts/m.sundae/projects
 
 ## Project Structure
 
-
  ```
  CalculatorMobileApp/
  ├── app/                   # Main application code
