@@ -6,6 +6,10 @@ A beautiful, feature-rich calculator application built with React Native and Exp
   <img src="assets/images/icon2.png" alt="Calculator App">
 </div>
 
+## Download
+
+Get the Android APK: [Download Here](https://expo.dev/accounts/m.sundae/projects/CalculatorMobileApp/builds/6cf61110-b708-48f8-a5ab-119bfeeb6a13)
+
 ## Features
 
 - **Modern UI Design**: Clean, intuitive interface with beautiful transitions
@@ -41,18 +45,3 @@ A beautiful, feature-rich calculator application built with React Native and Exp
 - **Clear History**: Remove all history items with a single tap
 
 ## Project Structure
-
-```
-CalculatorMobileApp/
-├── app/                   # Main application code
-│   ├── components/        # UI components
-│   ├── constants/         # Theme and other constants
-│   ├── context/           # React context (theme, etc.)
-│   ├── utils/             # Helper functions
-│   ├── _layout.tsx        # App layout
-│   └── index.tsx          # Main app entry point
-├── assets/                # Images, fonts and other static files
-├── node_modules/          # Dependencies
-└── package.json           # Project metadata and dependencies
-```
-
